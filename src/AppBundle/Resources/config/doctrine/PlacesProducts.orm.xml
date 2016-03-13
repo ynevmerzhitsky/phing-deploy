@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\PlacesProducts" table="places_products">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idPlace" type="bigint" column="id_place" nullable="false"/>
+    <field name="idProduct" type="bigint" column="id_product" nullable="false"/>
+    <field name="price" type="decimal" column="price" precision="10" scale="2" nullable="false"/>
+    <field name="date" type="datetime" column="date" nullable="false"/>
+    <field name="unitOfMeasurement" type="string" column="unit_of_measurement" length="10" nullable="false"/>
+    <field name="measuredValue" type="string" column="measured_value" length="6" nullable="false"/>
+    <field name="currency" type="string" column="currency" length="6" nullable="false"/>
+    <field name="unitOfValue" type="float" column="unit_of_value" precision="10" scale="0" nullable="false"/>
+  </entity>
+</doctrine-mapping>

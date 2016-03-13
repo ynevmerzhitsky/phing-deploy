@@ -1,0 +1,165 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="user")
+ * @ORM\Entity
+ */
+class User
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=25, nullable=false)
+     */
+    private $firstName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=25, nullable=true)
+     */
+    private $lastName;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="birthday", type="date", nullable=true)
+     */
+    private $birthday;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="raiting", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $raiting;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="crypt_salt", type="string", length=50, nullable=true)
+     */
+    private $cryptSalt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=100, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_country", type="integer", nullable=true)
+     */
+    private $idCountry;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_city", type="integer", nullable=true)
+     */
+    private $idCity;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sign_up_ip", type="bigint", nullable=false)
+     */
+    private $signUpIp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sign_up_agent", type="string", length=255, nullable=false)
+     */
+    private $signUpAgent;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="sign_up_date", type="datetime", nullable=false)
+     */
+    private $signUpDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=50, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_status", type="string", length=20, nullable=true)
+     */
+    private $emailStatus;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=20, nullable=false)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone_status", type="string", length=20, nullable=true)
+     */
+    private $phoneStatus;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_active", type="boolean", nullable=true)
+     */
+    private $isActive;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="avatar_path", type="string", length=255, nullable=true)
+     */
+    private $avatarPath;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="latitude", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $latitude;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="longitude", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $longitude;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_language", type="integer", nullable=true)
+     */
+    private $idLanguage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Language" table="language">
+    <unique-constraints>
+      <unique-constraint name="unique_locale" columns="locale"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="locale" type="string" column="locale" length="10" nullable="false"/>
+    <field name="languageName" type="string" column="language_name" length="50" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,53 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CategoryTreeAlCt
+ *
+ * @ORM\Table(name="category_tree_al_ct")
+ * @ORM\Entity
+ */
+class CategoryTreeAlCt
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idAncestor", type="integer", nullable=false)
+     */
+    private $idancestor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDescendant", type="integer", nullable=true)
+     */
+    private $iddescendant;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="level", type="integer", nullable=false)
+     */
+    private $level;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idParent", type="integer", nullable=true)
+     */
+    private $idparent;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

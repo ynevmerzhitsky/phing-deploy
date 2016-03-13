@@ -1,0 +1,53 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Timetable
+ *
+ * @ORM\Table(name="timetable")
+ * @ORM\Entity
+ */
+class Timetable
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_place", type="bigint", nullable=false)
+     */
+    private $idPlace;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="day", type="string", length=9, nullable=false)
+     */
+    private $day;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="time_begin", type="time", nullable=false)
+     */
+    private $timeBegin;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="time_end", type="time", nullable=false)
+     */
+    private $timeEnd;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

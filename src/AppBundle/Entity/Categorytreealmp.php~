@@ -1,0 +1,53 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Categorytreealmp
+ *
+ * @ORM\Table(name="categorytreealmp")
+ * @ORM\Entity
+ */
+class Categorytreealmp
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idAncestor", type="integer", nullable=false)
+     */
+    private $idancestor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDescedant", type="integer", nullable=false)
+     */
+    private $iddescedant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=100, nullable=false)
+     */
+    private $path;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="level", type="integer", nullable=false)
+     */
+    private $level;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

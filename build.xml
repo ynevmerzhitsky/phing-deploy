@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Jarbuzz" default="help" basedir=".">
+    <property file="build.properties"/>
+    <target name="help">
+        <echo>
+            configure               - setup config from build.properties
+            help                    - show instruction
+            composer_install        - composer install -o
+            composer_update         - composer update -o
+            git_pull                - git pull origin master from GitHub
+        </echo>
+    </target>
+    <target name="configure">
+        <copy file="./app/config/parameters.yml.dist" tofile="./app/config/parameters.yml" overwrite="true">
+            <filterchain>
+                <expandproperties />
+            </filterchain>
+        </copy>
+    </target>
+    <target name="git_pull">
+        <gitcheckout repository="${project.basedir}" branchname="." force="true"/>
+        <gitcheckout repository="${project.basedir}" branchname="master" />
+        <gitpull repository="${project.basedir}" source="origin"/>
+    </target>
+	
+	<target name="composer_install">
+		<composer command="install">
+            <arg value="-o"/>
+        </composer>
+	</target>
+	<target name="composer_update">
+		<composer command="update">
+            <arg value="-o"/>
+        </composer>
+	</target>
+    <target name="release" depends="git_pull, composer_install, configure"/>
+</project>

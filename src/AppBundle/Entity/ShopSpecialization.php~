@@ -1,0 +1,39 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ShopSpecialization
+ *
+ * @ORM\Table(name="shop_specialization")
+ * @ORM\Entity
+ */
+class ShopSpecialization
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_shop", type="bigint", nullable=true)
+     */
+    private $idShop;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_specialization", type="integer", nullable=true)
+     */
+    private $idSpecialization;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

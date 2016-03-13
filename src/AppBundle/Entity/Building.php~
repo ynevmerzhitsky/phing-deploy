@@ -1,0 +1,67 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Building
+ *
+ * @ORM\Table(name="building")
+ * @ORM\Entity
+ */
+class Building
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=60, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=60, nullable=false)
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="longitude", type="decimal", precision=11, scale=8, nullable=false)
+     */
+    private $longitude;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="latitude", type="decimal", precision=10, scale=8, nullable=false)
+     */
+    private $latitude;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dst_offset", type="smallint", nullable=false)
+     */
+    private $dstOffset;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="raw_offset", type="integer", nullable=false)
+     */
+    private $rawOffset;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

@@ -1,0 +1,60 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Shop
+ *
+ * @ORM\Table(name="shop")
+ * @ORM\Entity
+ */
+class Shop
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_place", type="bigint", nullable=false)
+     */
+    private $idPlace;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="rating", type="boolean", nullable=true)
+     */
+    private $rating;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="assortment", type="integer", nullable=false)
+     */
+    private $assortment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="additional_information", type="string", length=120, nullable=true)
+     */
+    private $additionalInformation;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

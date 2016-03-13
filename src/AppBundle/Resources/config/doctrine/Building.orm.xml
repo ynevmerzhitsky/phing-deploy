@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Building" table="building">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="60" nullable="false"/>
+    <field name="address" type="string" column="address" length="60" nullable="false"/>
+    <field name="longitude" type="decimal" column="longitude" precision="11" scale="8" nullable="false"/>
+    <field name="latitude" type="decimal" column="latitude" precision="10" scale="8" nullable="false"/>
+    <field name="dstOffset" type="smallint" column="dst_offset" nullable="false"/>
+    <field name="rawOffset" type="integer" column="raw_offset" nullable="false"/>
+  </entity>
+</doctrine-mapping>
