@@ -18,20 +18,21 @@
         </copy>
     </target>
     <target name="git_pull">
-        <gitcheckout repository="${project.basedir}" branchname="." force="true"/>
-        <gitcheckout repository="${project.basedir}" branchname="master" />
-        <gitpull repository="${project.basedir}" source="origin"/>
+	<exec command="git pull origin master"/>
     </target>
 	
 	<target name="composer_install">
-		<composer command="install">
+	<exec command="composer install">
             <arg value="-o"/>
-        </composer>
+        </exec>
 	</target>
 	<target name="composer_update">
-		<composer command="update">
+	<exec command="composer update">
             <arg value="-o"/>
-        </composer>
+        </exec>
 	</target>
-    <target name="release" depends="git_pull, composer_install, configure"/>
+    <target name="chown">
+	<exec command="chown -R www-data:www-data ."/>
+    </target>
+    <target name="release" depends="git_pull, configure, composer_install, chown"/>
 </project>
